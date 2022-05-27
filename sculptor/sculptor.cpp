@@ -52,6 +52,9 @@ void Sculptor::setColor(float r, float g, float b, float alpha)
 void Sculptor::putVoxel(int x, int y, int z)
 {
     v[x][y][z].isOn =1;
+    v[x][y][z].r = r;
+
+
 }
 
 void Sculptor::cutVoxel(int x, int y, int z)
@@ -152,7 +155,30 @@ void Sculptor::writeOFF(const char *filename)
       exit(1);
     }
     fout << "OFF \n";
-    fout << 8  <<' ' << 6 <<' ' << 0 <<"\n";
+
+    for(int i=0; i <= nx; i++){
+                for(int j=0; j<= ny; j++){
+                    for(int k=0; k<=nz; k++){
+                        if(v[i][j][k].isOn == 1){
+                            fout << 8*i<<' ' << 6*j<<' ' << 0*k <<"\n";
+
+
+
+                        }
+                    }
+               }
+            }
+
+
+
+
+
+    fout << 8<<' ' << 6<<' ' << 0 <<"\n";
+
+
+
+
+
     fout.close();
 
 
