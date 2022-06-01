@@ -44,12 +44,14 @@ int main(void)
     abaju.writeOFF("abaju.off");
 
 
-
-
-/*
      Sculptor bloco(20,20,20);
-     bloco.putVoxel(10,10,10);
+     bloco.putSphere(10,10,10,10);
+     bloco.setColor(1,0,0,1);
+     bloco.putSphere(10,10,10,9);
+     bloco.cutSphere(10,10,12,8);
      bloco.writeOFF("bloco.off");
+
+
 
 
     // *modelo do professor
@@ -64,5 +66,5 @@ int main(void)
      trono.cutBox(1,8,1,9,1,9);
      // grava a escultura digital no arquivo "trono.off"
      trono.writeOFF("trono.off");
-*/
+
 }
