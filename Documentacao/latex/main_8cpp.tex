@@ -1,0 +1,87 @@
+\hypertarget{main_8cpp}{}\doxysection{Referência do Arquivo /home/rosa/\+Documentos/\+Projetos/projeto-\/programacao-\/avancada/sculptor/main.cpp}
+\label{main_8cpp}\index{/home/rosa/Documentos/Projetos/projeto-\/programacao-\/avancada/sculptor/main.cpp@{/home/rosa/Documentos/Projetos/projeto-\/programacao-\/avancada/sculptor/main.cpp}}
+{\ttfamily \#include \char`\"{}sculptor.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Funções}
+\mbox{\Hypertarget{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9     \mbox{\hyperlink{class_sculptor}{Sculptor}} abaju(60, 60, 60);}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     abaju.setColor(0,0,0,1);                    \textcolor{comment}{//cor do suporte inferior -\/ preto}}
+\DoxyCodeLine{12     abaju.putEllipsoid(15,15,1,6,6,1);          \textcolor{comment}{//Suporte inferior}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     abaju.cutVoxel(15,15,0);                    \textcolor{comment}{//Apagar detalhe inferior}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     abaju.setColor(1,1,1,0.5);                  \textcolor{comment}{// Cor da tela -\/ branca}}
+\DoxyCodeLine{17     abaju.putBox(10,20,10,20,10,20);            \textcolor{comment}{//bloco superior (tela)}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     abaju.cutBox(11,19,11,19,9,18);             \textcolor{comment}{//abertura quadrada inferior}}
+\DoxyCodeLine{20     abaju.cutEllipsoid(15,15,15,5,5,8);         \textcolor{comment}{//Abertura circular supeior}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     abaju.setColor(0,0,0,1);                    \textcolor{comment}{//Cor da barra -\/ Preta}}
+\DoxyCodeLine{23     abaju.putBox(14,16,14,16,1,15);             \textcolor{comment}{// Barra do centro 15, 15, 15}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     abaju.setColor(1,1,0,1);                    \textcolor{comment}{//Cor da lampada -\/ amarelo}}
+\DoxyCodeLine{27     abaju.putSphere(15,15,15,3);                \textcolor{comment}{//lampada}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     abaju.setColor(1,1,1,0.5);                  \textcolor{comment}{// Cor da tela -\/ branca}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{comment}{// ajustes de furo}}
+\DoxyCodeLine{32     abaju.putVoxel(15,20,15);}
+\DoxyCodeLine{33     abaju.putVoxel(20,15,15);}
+\DoxyCodeLine{34     abaju.putVoxel(10,15,15);}
+\DoxyCodeLine{35     abaju.putVoxel(15,10,15);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{comment}{// Puchador}}
+\DoxyCodeLine{39    \textcolor{comment}{// abaju.setColor(1,0,0,1);}}
+\DoxyCodeLine{40    \textcolor{comment}{// abaju.putVoxel(15,17,12);}}
+\DoxyCodeLine{41    \textcolor{comment}{// abaju.putBox(15,15,18,18,8,12);}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     abaju.writeOFF(\textcolor{stringliteral}{"abaju.off"});}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47      \mbox{\hyperlink{class_sculptor}{Sculptor}} bloco(20,20,20);}
+\DoxyCodeLine{48      bloco.putSphere(10,10,10,10);}
+\DoxyCodeLine{49      bloco.setColor(1,0,0,1);}
+\DoxyCodeLine{50      bloco.putSphere(10,10,10,9);}
+\DoxyCodeLine{51      bloco.cutSphere(10,10,12,8);}
+\DoxyCodeLine{52      bloco.writeOFF(\textcolor{stringliteral}{"bloco.off"});}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{comment}{// *modelo do professor}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59      \textcolor{comment}{// cria um escultor cuja matriz tem 10x10x10 voxels}}
+\DoxyCodeLine{60      \mbox{\hyperlink{class_sculptor}{Sculptor}} trono(10,10,10);}
+\DoxyCodeLine{61      \textcolor{comment}{// para mudar a cor do voxel}}
+\DoxyCodeLine{62      trono.setColor(0,0,1.0,1.0); \textcolor{comment}{// azul}}
+\DoxyCodeLine{63      \textcolor{comment}{// ativa os voxels na faixa de [x,y,z] pertencendo a [0-\/9]}}
+\DoxyCodeLine{64      trono.putBox(0,9,0,9,0,9);}
+\DoxyCodeLine{65      \textcolor{comment}{// desativa os voxels na faixa de [x,y,z] pertencendo a [0-\/9]}}
+\DoxyCodeLine{66      trono.cutBox(1,8,1,9,1,9);}
+\DoxyCodeLine{67      \textcolor{comment}{// grava a escultura digital no arquivo "trono.off"}}
+\DoxyCodeLine{68      trono.writeOFF(\textcolor{stringliteral}{"trono.off"});}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \}}
+
+\end{DoxyCode}

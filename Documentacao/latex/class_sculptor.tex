@@ -1,0 +1,433 @@
+\hypertarget{class_sculptor}{}\doxysection{Referência da Classe Sculptor}
+\label{class_sculptor}\index{Sculptor@{Sculptor}}
+
+
+{\ttfamily \#include $<$sculptor.\+h$>$}
+
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sculptor_a014e3ef5517bf0e9d9e14486b6ac6433}{Sculptor}} (int \+\_\+nx, int \+\_\+ny, int \+\_\+nz)
+\item 
+\mbox{\hyperlink{class_sculptor_a8f159bf97458326f16d2e238e11be7ff}{$\sim$\+Sculptor}} ()
+\item 
+void \mbox{\hyperlink{class_sculptor_af1d69da01379874b0dfd6454787cb562}{set\+Color}} (float \mbox{\hyperlink{class_sculptor_a3f5d2ec3b66d645019b8d81c810a1cd8}{r}}, float \mbox{\hyperlink{class_sculptor_a208c06af69a81a1568df4493868816f1}{g}}, float \mbox{\hyperlink{class_sculptor_a7aafd7305ea634252d8288b60536cd96}{b}}, float alpha)
+\item 
+void \mbox{\hyperlink{class_sculptor_a4bdea3048b419d58e93074060eaa7b52}{put\+Voxel}} (int x, int y, int z)
+\item 
+void \mbox{\hyperlink{class_sculptor_ad9d714a35fc8ae16d06eb5df37c3493c}{cut\+Voxel}} (int x, int y, int z)
+\item 
+void \mbox{\hyperlink{class_sculptor_a311ad7a0fb83fc67ac1f378be8e99fe1}{put\+Box}} (int x0, int x1, int y0, int y1, int z0, int z1)
+\item 
+void \mbox{\hyperlink{class_sculptor_aa84a1b12b09e9e103fc8d78f8d1bc00f}{cut\+Box}} (int x0, int x1, int y0, int y1, int z0, int z1)
+\item 
+void \mbox{\hyperlink{class_sculptor_a794a2b6ee8fc8098fd6150cb46101fc6}{put\+Sphere}} (int xcenter, int ycenter, int zcenter, int radius)
+\item 
+void \mbox{\hyperlink{class_sculptor_a67ab8c0ba5116adb8af1d01ad373ac15}{cut\+Sphere}} (int xcenter, int ycenter, int zcenter, int radius)
+\item 
+void \mbox{\hyperlink{class_sculptor_a093615b0c2b9b3a17a56300b9b939f39}{put\+Ellipsoid}} (int xcenter, int ycenter, int zcenter, int rx, int ry, int rz)
+\item 
+void \mbox{\hyperlink{class_sculptor_a18d2922c111c4c13653ee07d878151ad}{cut\+Ellipsoid}} (int xcenter, int ycenter, int zcenter, int rx, int ry, int rz)
+\item 
+void \mbox{\hyperlink{class_sculptor_a58cb72d22001a5034f15383ca983830c}{write\+O\+FF}} (const char $\ast$filename)
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_voxel}{Voxel}} $\ast$$\ast$$\ast$ \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}
+\item 
+int \mbox{\hyperlink{class_sculptor_ad1e32f9042538419a3bc7b376f7813b8}{nx}}
+\item 
+int \mbox{\hyperlink{class_sculptor_a1ce2ff97ec94927928ab3f5ec4ba6761}{ny}}
+\item 
+int \mbox{\hyperlink{class_sculptor_a33204e7df26a7ee4c7192381a24335d3}{nz}}
+\item 
+float \mbox{\hyperlink{class_sculptor_a3f5d2ec3b66d645019b8d81c810a1cd8}{r}}
+\item 
+float \mbox{\hyperlink{class_sculptor_a208c06af69a81a1568df4493868816f1}{g}}
+\item 
+float \mbox{\hyperlink{class_sculptor_a7aafd7305ea634252d8288b60536cd96}{b}}
+\item 
+float \mbox{\hyperlink{class_sculptor_a6fd0157dcf17582f0edd5fddf157604e}{a}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_sculptor_a014e3ef5517bf0e9d9e14486b6ac6433}\label{class_sculptor_a014e3ef5517bf0e9d9e14486b6ac6433}} 
+\index{Sculptor@{Sculptor}!Sculptor@{Sculptor}}
+\index{Sculptor@{Sculptor}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{Sculptor()}{Sculptor()}}
+{\footnotesize\ttfamily Sculptor\+::\+Sculptor (\begin{DoxyParamCaption}\item[{int}]{\+\_\+nx,  }\item[{int}]{\+\_\+ny,  }\item[{int}]{\+\_\+nz }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9                                            \{}
+\DoxyCodeLine{10     \mbox{\hyperlink{class_sculptor_ad1e32f9042538419a3bc7b376f7813b8}{nx}} = \_nx;}
+\DoxyCodeLine{11     \mbox{\hyperlink{class_sculptor_a1ce2ff97ec94927928ab3f5ec4ba6761}{ny}} = \_ny;}
+\DoxyCodeLine{12     \mbox{\hyperlink{class_sculptor_a33204e7df26a7ee4c7192381a24335d3}{nz}} = \_nz;}
+\DoxyCodeLine{13     \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}} = \textcolor{keyword}{new} \mbox{\hyperlink{struct_voxel}{Voxel}} **[\mbox{\hyperlink{class_sculptor_ad1e32f9042538419a3bc7b376f7813b8}{nx}}];}
+\DoxyCodeLine{14       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_sculptor_ad1e32f9042538419a3bc7b376f7813b8}{nx}}; i++)}
+\DoxyCodeLine{15       \{}
+\DoxyCodeLine{16           \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i] = \textcolor{keyword}{new} \mbox{\hyperlink{struct_voxel}{Voxel}} *[\mbox{\hyperlink{class_sculptor_a1ce2ff97ec94927928ab3f5ec4ba6761}{ny}}];}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_sculptor_a1ce2ff97ec94927928ab3f5ec4ba6761}{ny}}; j++)}
+\DoxyCodeLine{19           \{}
+\DoxyCodeLine{20                 \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j] = \textcolor{keyword}{new} \mbox{\hyperlink{struct_voxel}{Voxel}}[\mbox{\hyperlink{class_sculptor_a33204e7df26a7ee4c7192381a24335d3}{nz}}];}
+\DoxyCodeLine{21            \}}
+\DoxyCodeLine{22        \}}
+\DoxyCodeLine{23 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sculptor_a8f159bf97458326f16d2e238e11be7ff}\label{class_sculptor_a8f159bf97458326f16d2e238e11be7ff}} 
+\index{Sculptor@{Sculptor}!````~Sculptor@{$\sim$Sculptor}}
+\index{````~Sculptor@{$\sim$Sculptor}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{$\sim$Sculptor()}{~Sculptor()}}
+{\footnotesize\ttfamily Sculptor\+::$\sim$\+Sculptor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_sculptor_ad1e32f9042538419a3bc7b376f7813b8}{nx}}; i++)}
+\DoxyCodeLine{29     \{}
+\DoxyCodeLine{30         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_sculptor_a1ce2ff97ec94927928ab3f5ec4ba6761}{ny}}; j++)}
+\DoxyCodeLine{31         \{}
+\DoxyCodeLine{32               \textcolor{keyword}{delete} []\mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j];}
+\DoxyCodeLine{33          \}}
+\DoxyCodeLine{34          \textcolor{keyword}{delete} [] \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i];}
+\DoxyCodeLine{35      \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keyword}{delete} []\mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_sculptor_aa84a1b12b09e9e103fc8d78f8d1bc00f}\label{class_sculptor_aa84a1b12b09e9e103fc8d78f8d1bc00f}} 
+\index{Sculptor@{Sculptor}!cutBox@{cutBox}}
+\index{cutBox@{cutBox}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{cutBox()}{cutBox()}}
+{\footnotesize\ttfamily void Sculptor\+::cut\+Box (\begin{DoxyParamCaption}\item[{int}]{x0,  }\item[{int}]{x1,  }\item[{int}]{y0,  }\item[{int}]{y1,  }\item[{int}]{z0,  }\item[{int}]{z1 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{85 \{}
+\DoxyCodeLine{86     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=x0; i <= x1; i++)\{}
+\DoxyCodeLine{87         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=y0; j<= y1; j++)\{}
+\DoxyCodeLine{88             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=z0; k<=z1; k++)\{}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90                   \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a6fbe8bd53f64685ac4210726d40fc775}{isOn}} =0;}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92             \}}
+\DoxyCodeLine{93         \}}
+\DoxyCodeLine{94     \}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sculptor_a18d2922c111c4c13653ee07d878151ad}\label{class_sculptor_a18d2922c111c4c13653ee07d878151ad}} 
+\index{Sculptor@{Sculptor}!cutEllipsoid@{cutEllipsoid}}
+\index{cutEllipsoid@{cutEllipsoid}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{cutEllipsoid()}{cutEllipsoid()}}
+{\footnotesize\ttfamily void Sculptor\+::cut\+Ellipsoid (\begin{DoxyParamCaption}\item[{int}]{xcenter,  }\item[{int}]{ycenter,  }\item[{int}]{zcenter,  }\item[{int}]{rx,  }\item[{int}]{ry,  }\item[{int}]{rz }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{153 \{       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i <\mbox{\hyperlink{class_sculptor_ad1e32f9042538419a3bc7b376f7813b8}{nx}}; i++)\{}
+\DoxyCodeLine{154             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<\mbox{\hyperlink{class_sculptor_a1ce2ff97ec94927928ab3f5ec4ba6761}{ny}}; j++)\{}
+\DoxyCodeLine{155                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<\mbox{\hyperlink{class_sculptor_a33204e7df26a7ee4c7192381a24335d3}{nz}}; k++)\{}
+\DoxyCodeLine{156                      \textcolor{keywordflow}{if}((pow(i-\/xcenter,2)/pow(rx,2) + pow(j-\/ycenter,2)/pow(ry,2) + pow(k-\/zcenter,2)/pow(rz,2) <= 1))\{}
+\DoxyCodeLine{157                           \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a6fbe8bd53f64685ac4210726d40fc775}{isOn}} =0;}
+\DoxyCodeLine{158                           \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a06872ec79b836120b551a848968c0f1b}{r}} = \mbox{\hyperlink{class_sculptor_a3f5d2ec3b66d645019b8d81c810a1cd8}{r}};}
+\DoxyCodeLine{159                           \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a27c0da1ed2ff430401d23ff171612a73}{g}} = \mbox{\hyperlink{class_sculptor_a208c06af69a81a1568df4493868816f1}{g}};}
+\DoxyCodeLine{160                           \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a5cd8432b1d7d0fd8b79e0fc7d10373a8}{b}} = \mbox{\hyperlink{class_sculptor_a7aafd7305ea634252d8288b60536cd96}{b}};}
+\DoxyCodeLine{161                           \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a3ce2579eb0a9f09a07112ce7498a638e}{a}} = \mbox{\hyperlink{class_sculptor_a6fd0157dcf17582f0edd5fddf157604e}{a}};}
+\DoxyCodeLine{162                        \}}
+\DoxyCodeLine{163                 \}}
+\DoxyCodeLine{164             \}}
+\DoxyCodeLine{165         \}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sculptor_a67ab8c0ba5116adb8af1d01ad373ac15}\label{class_sculptor_a67ab8c0ba5116adb8af1d01ad373ac15}} 
+\index{Sculptor@{Sculptor}!cutSphere@{cutSphere}}
+\index{cutSphere@{cutSphere}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{cutSphere()}{cutSphere()}}
+{\footnotesize\ttfamily void Sculptor\+::cut\+Sphere (\begin{DoxyParamCaption}\item[{int}]{xcenter,  }\item[{int}]{ycenter,  }\item[{int}]{zcenter,  }\item[{int}]{radius }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{116 \{}
+\DoxyCodeLine{117     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i <\mbox{\hyperlink{class_sculptor_ad1e32f9042538419a3bc7b376f7813b8}{nx}}; i++)\{}
+\DoxyCodeLine{118         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<\mbox{\hyperlink{class_sculptor_a1ce2ff97ec94927928ab3f5ec4ba6761}{ny}}; j++)\{}
+\DoxyCodeLine{119             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<\mbox{\hyperlink{class_sculptor_a33204e7df26a7ee4c7192381a24335d3}{nz}}; k++)\{}
+\DoxyCodeLine{120                  \textcolor{keywordflow}{if}((pow(i-\/xcenter,2) + pow(j-\/ycenter,2) + pow(k-\/zcenter,2) <= pow(radius,2)))\{}
+\DoxyCodeLine{121                       \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a6fbe8bd53f64685ac4210726d40fc775}{isOn}} =0;}
+\DoxyCodeLine{122                       \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a06872ec79b836120b551a848968c0f1b}{r}} = \mbox{\hyperlink{class_sculptor_a3f5d2ec3b66d645019b8d81c810a1cd8}{r}};}
+\DoxyCodeLine{123                       \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a27c0da1ed2ff430401d23ff171612a73}{g}} = \mbox{\hyperlink{class_sculptor_a208c06af69a81a1568df4493868816f1}{g}};}
+\DoxyCodeLine{124                       \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a5cd8432b1d7d0fd8b79e0fc7d10373a8}{b}} = \mbox{\hyperlink{class_sculptor_a7aafd7305ea634252d8288b60536cd96}{b}};}
+\DoxyCodeLine{125                       \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a3ce2579eb0a9f09a07112ce7498a638e}{a}} = \mbox{\hyperlink{class_sculptor_a6fd0157dcf17582f0edd5fddf157604e}{a}};}
+\DoxyCodeLine{126                    \}}
+\DoxyCodeLine{127             \}}
+\DoxyCodeLine{128         \}}
+\DoxyCodeLine{129     \}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sculptor_ad9d714a35fc8ae16d06eb5df37c3493c}\label{class_sculptor_ad9d714a35fc8ae16d06eb5df37c3493c}} 
+\index{Sculptor@{Sculptor}!cutVoxel@{cutVoxel}}
+\index{cutVoxel@{cutVoxel}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{cutVoxel()}{cutVoxel()}}
+{\footnotesize\ttfamily void Sculptor\+::cut\+Voxel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{z }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{62 \{}
+\DoxyCodeLine{63     \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[x][y][z].\mbox{\hyperlink{struct_voxel_a6fbe8bd53f64685ac4210726d40fc775}{isOn}} =0;}
+\DoxyCodeLine{64 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sculptor_a311ad7a0fb83fc67ac1f378be8e99fe1}\label{class_sculptor_a311ad7a0fb83fc67ac1f378be8e99fe1}} 
+\index{Sculptor@{Sculptor}!putBox@{putBox}}
+\index{putBox@{putBox}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{putBox()}{putBox()}}
+{\footnotesize\ttfamily void Sculptor\+::put\+Box (\begin{DoxyParamCaption}\item[{int}]{x0,  }\item[{int}]{x1,  }\item[{int}]{y0,  }\item[{int}]{y1,  }\item[{int}]{z0,  }\item[{int}]{z1 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{67 \{}
+\DoxyCodeLine{68     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=x0; i <= x1; i++)\{}
+\DoxyCodeLine{69         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=y0; j<= y1; j++)\{}
+\DoxyCodeLine{70             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=z0; k<=z1; k++)\{}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72                   \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a6fbe8bd53f64685ac4210726d40fc775}{isOn}} =1;}
+\DoxyCodeLine{73                   \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a06872ec79b836120b551a848968c0f1b}{r}} = \mbox{\hyperlink{class_sculptor_a3f5d2ec3b66d645019b8d81c810a1cd8}{r}};}
+\DoxyCodeLine{74                   \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a27c0da1ed2ff430401d23ff171612a73}{g}} = \mbox{\hyperlink{class_sculptor_a208c06af69a81a1568df4493868816f1}{g}};}
+\DoxyCodeLine{75                   \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a5cd8432b1d7d0fd8b79e0fc7d10373a8}{b}} = \mbox{\hyperlink{class_sculptor_a7aafd7305ea634252d8288b60536cd96}{b}};}
+\DoxyCodeLine{76                   \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a3ce2579eb0a9f09a07112ce7498a638e}{a}} = \mbox{\hyperlink{class_sculptor_a6fd0157dcf17582f0edd5fddf157604e}{a}};}
+\DoxyCodeLine{77             \}}
+\DoxyCodeLine{78         \}}
+\DoxyCodeLine{79     \}}
+\DoxyCodeLine{80 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sculptor_a093615b0c2b9b3a17a56300b9b939f39}\label{class_sculptor_a093615b0c2b9b3a17a56300b9b939f39}} 
+\index{Sculptor@{Sculptor}!putEllipsoid@{putEllipsoid}}
+\index{putEllipsoid@{putEllipsoid}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{putEllipsoid()}{putEllipsoid()}}
+{\footnotesize\ttfamily void Sculptor\+::put\+Ellipsoid (\begin{DoxyParamCaption}\item[{int}]{xcenter,  }\item[{int}]{ycenter,  }\item[{int}]{zcenter,  }\item[{int}]{rx,  }\item[{int}]{ry,  }\item[{int}]{rz }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{135 \{       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i <\mbox{\hyperlink{class_sculptor_ad1e32f9042538419a3bc7b376f7813b8}{nx}}; i++)\{}
+\DoxyCodeLine{136             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<\mbox{\hyperlink{class_sculptor_a1ce2ff97ec94927928ab3f5ec4ba6761}{ny}}; j++)\{}
+\DoxyCodeLine{137                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<\mbox{\hyperlink{class_sculptor_a33204e7df26a7ee4c7192381a24335d3}{nz}}; k++)\{}
+\DoxyCodeLine{138                      \textcolor{keywordflow}{if}((pow(i-\/xcenter,2)/pow(rx,2) + pow(j-\/ycenter,2)/pow(ry,2) + pow(k-\/zcenter,2)/pow(rz,2) <= 1))\{}
+\DoxyCodeLine{139                           \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a6fbe8bd53f64685ac4210726d40fc775}{isOn}} =1;}
+\DoxyCodeLine{140                           \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a06872ec79b836120b551a848968c0f1b}{r}} = \mbox{\hyperlink{class_sculptor_a3f5d2ec3b66d645019b8d81c810a1cd8}{r}};}
+\DoxyCodeLine{141                           \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a27c0da1ed2ff430401d23ff171612a73}{g}} = \mbox{\hyperlink{class_sculptor_a208c06af69a81a1568df4493868816f1}{g}};}
+\DoxyCodeLine{142                           \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a5cd8432b1d7d0fd8b79e0fc7d10373a8}{b}} = \mbox{\hyperlink{class_sculptor_a7aafd7305ea634252d8288b60536cd96}{b}};}
+\DoxyCodeLine{143                           \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a3ce2579eb0a9f09a07112ce7498a638e}{a}} = \mbox{\hyperlink{class_sculptor_a6fd0157dcf17582f0edd5fddf157604e}{a}};}
+\DoxyCodeLine{144                        \}}
+\DoxyCodeLine{145                 \}}
+\DoxyCodeLine{146             \}}
+\DoxyCodeLine{147         \}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sculptor_a794a2b6ee8fc8098fd6150cb46101fc6}\label{class_sculptor_a794a2b6ee8fc8098fd6150cb46101fc6}} 
+\index{Sculptor@{Sculptor}!putSphere@{putSphere}}
+\index{putSphere@{putSphere}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{putSphere()}{putSphere()}}
+{\footnotesize\ttfamily void Sculptor\+::put\+Sphere (\begin{DoxyParamCaption}\item[{int}]{xcenter,  }\item[{int}]{ycenter,  }\item[{int}]{zcenter,  }\item[{int}]{radius }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{99 \{}
+\DoxyCodeLine{100     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i <\mbox{\hyperlink{class_sculptor_ad1e32f9042538419a3bc7b376f7813b8}{nx}}; i++)\{}
+\DoxyCodeLine{101         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<\mbox{\hyperlink{class_sculptor_a1ce2ff97ec94927928ab3f5ec4ba6761}{ny}}; j++)\{}
+\DoxyCodeLine{102             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<\mbox{\hyperlink{class_sculptor_a33204e7df26a7ee4c7192381a24335d3}{nz}}; k++)\{}
+\DoxyCodeLine{103                  \textcolor{keywordflow}{if}((pow(i-\/xcenter,2) + pow(j-\/ycenter,2) + pow(k-\/zcenter,2) <= pow(radius,2)))\{}
+\DoxyCodeLine{104                       \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a6fbe8bd53f64685ac4210726d40fc775}{isOn}} =1;}
+\DoxyCodeLine{105                       \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a06872ec79b836120b551a848968c0f1b}{r}} = \mbox{\hyperlink{class_sculptor_a3f5d2ec3b66d645019b8d81c810a1cd8}{r}};}
+\DoxyCodeLine{106                       \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a27c0da1ed2ff430401d23ff171612a73}{g}} = \mbox{\hyperlink{class_sculptor_a208c06af69a81a1568df4493868816f1}{g}};}
+\DoxyCodeLine{107                       \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a5cd8432b1d7d0fd8b79e0fc7d10373a8}{b}} = \mbox{\hyperlink{class_sculptor_a7aafd7305ea634252d8288b60536cd96}{b}};}
+\DoxyCodeLine{108                       \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a3ce2579eb0a9f09a07112ce7498a638e}{a}} = \mbox{\hyperlink{class_sculptor_a6fd0157dcf17582f0edd5fddf157604e}{a}};}
+\DoxyCodeLine{109                    \}}
+\DoxyCodeLine{110             \}}
+\DoxyCodeLine{111         \}}
+\DoxyCodeLine{112     \}}
+\DoxyCodeLine{113 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sculptor_a4bdea3048b419d58e93074060eaa7b52}\label{class_sculptor_a4bdea3048b419d58e93074060eaa7b52}} 
+\index{Sculptor@{Sculptor}!putVoxel@{putVoxel}}
+\index{putVoxel@{putVoxel}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{putVoxel()}{putVoxel()}}
+{\footnotesize\ttfamily void Sculptor\+::put\+Voxel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{z }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54     \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[x][y][z].\mbox{\hyperlink{struct_voxel_a6fbe8bd53f64685ac4210726d40fc775}{isOn}} =1;}
+\DoxyCodeLine{55     \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[x][y][z].\mbox{\hyperlink{struct_voxel_a06872ec79b836120b551a848968c0f1b}{r}} = \mbox{\hyperlink{class_sculptor_a3f5d2ec3b66d645019b8d81c810a1cd8}{r}};}
+\DoxyCodeLine{56     \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[x][y][z].\mbox{\hyperlink{struct_voxel_a27c0da1ed2ff430401d23ff171612a73}{g}} = \mbox{\hyperlink{class_sculptor_a208c06af69a81a1568df4493868816f1}{g}};}
+\DoxyCodeLine{57     \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[x][y][z].\mbox{\hyperlink{struct_voxel_a5cd8432b1d7d0fd8b79e0fc7d10373a8}{b}} = \mbox{\hyperlink{class_sculptor_a7aafd7305ea634252d8288b60536cd96}{b}};}
+\DoxyCodeLine{58     \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[x][y][z].\mbox{\hyperlink{struct_voxel_a3ce2579eb0a9f09a07112ce7498a638e}{a}} = \mbox{\hyperlink{class_sculptor_a6fd0157dcf17582f0edd5fddf157604e}{a}};}
+\DoxyCodeLine{59 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sculptor_af1d69da01379874b0dfd6454787cb562}\label{class_sculptor_af1d69da01379874b0dfd6454787cb562}} 
+\index{Sculptor@{Sculptor}!setColor@{setColor}}
+\index{setColor@{setColor}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void Sculptor\+::set\+Color (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float}]{alpha }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{43 \{}
+\DoxyCodeLine{44     \textcolor{keyword}{this} -\/>r = \mbox{\hyperlink{class_sculptor_a3f5d2ec3b66d645019b8d81c810a1cd8}{r}};}
+\DoxyCodeLine{45     \textcolor{keyword}{this} -\/>g = \mbox{\hyperlink{class_sculptor_a208c06af69a81a1568df4493868816f1}{g}};}
+\DoxyCodeLine{46     \textcolor{keyword}{this} -\/>b = \mbox{\hyperlink{class_sculptor_a7aafd7305ea634252d8288b60536cd96}{b}};}
+\DoxyCodeLine{47     \mbox{\hyperlink{class_sculptor_a6fd0157dcf17582f0edd5fddf157604e}{a}} = alpha;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sculptor_a58cb72d22001a5034f15383ca983830c}\label{class_sculptor_a58cb72d22001a5034f15383ca983830c}} 
+\index{Sculptor@{Sculptor}!writeOFF@{writeOFF}}
+\index{writeOFF@{writeOFF}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{writeOFF()}{writeOFF()}}
+{\footnotesize\ttfamily void Sculptor\+::write\+O\+FF (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{169 \{}
+\DoxyCodeLine{170     std::ofstream fout;}
+\DoxyCodeLine{171     fout.open(filename);}
+\DoxyCodeLine{172     \textcolor{keywordflow}{if} (!fout.is\_open()) \{}
+\DoxyCodeLine{173       exit(1);}
+\DoxyCodeLine{174     \}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176     \textcolor{keywordtype}{int} cont=0, sum =0;}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i < \mbox{\hyperlink{class_sculptor_ad1e32f9042538419a3bc7b376f7813b8}{nx}}; i++)\{}
+\DoxyCodeLine{179                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j< \mbox{\hyperlink{class_sculptor_a1ce2ff97ec94927928ab3f5ec4ba6761}{ny}}; j++)\{}
+\DoxyCodeLine{180                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k< \mbox{\hyperlink{class_sculptor_a33204e7df26a7ee4c7192381a24335d3}{nz}}; k++)\{}
+\DoxyCodeLine{181                         \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].isOn)\{}
+\DoxyCodeLine{182                            cont++;}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184                         \}}
+\DoxyCodeLine{185                     \}}
+\DoxyCodeLine{186                \}}
+\DoxyCodeLine{187      \}}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189     fout << \textcolor{stringliteral}{"OFF \(\backslash\)n"};}
+\DoxyCodeLine{190     fout << cont*8 <<\textcolor{charliteral}{' '} << cont*6<<\textcolor{charliteral}{' '} << cont*0 <<\textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<\mbox{\hyperlink{class_sculptor_ad1e32f9042538419a3bc7b376f7813b8}{nx}}; i++)\{}
+\DoxyCodeLine{193                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<\mbox{\hyperlink{class_sculptor_a1ce2ff97ec94927928ab3f5ec4ba6761}{ny}}; j++)\{}
+\DoxyCodeLine{194                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<\mbox{\hyperlink{class_sculptor_a33204e7df26a7ee4c7192381a24335d3}{nz}}; k++)\{}
+\DoxyCodeLine{195                      \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].isOn)\{}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197                      fout<< i -\/ 0.5 << \textcolor{charliteral}{' '} <<j + 0.5<< \textcolor{charliteral}{' '}<<k -\/0.5 << std:: endl;}
+\DoxyCodeLine{198                      fout<< i -\/ 0.5 << \textcolor{charliteral}{' '} <<j -\/ 0.5 << \textcolor{charliteral}{' '} <<k -\/ 0.5 << std:: endl;}
+\DoxyCodeLine{199                      fout<< i + 0.5 << \textcolor{charliteral}{' '} <<j -\/ 0.5 << \textcolor{charliteral}{' '} <<k -\/ 0.5 << std:: endl;}
+\DoxyCodeLine{200                      fout<< i + 0.5 << \textcolor{charliteral}{' '} <<j + 0.5 << \textcolor{charliteral}{' '} <<k -\/ 0.5 << std:: endl;}
+\DoxyCodeLine{201                      fout<< i -\/ 0.5 << \textcolor{charliteral}{' '} <<j + 0.5 << \textcolor{charliteral}{' '} <<k + 0.5 << std:: endl;}
+\DoxyCodeLine{202                      fout<< i -\/ 0.5 << \textcolor{charliteral}{' '} <<j -\/ 0.5 << \textcolor{charliteral}{' '} <<k + 0.5 << std:: endl;}
+\DoxyCodeLine{203                      fout<< i + 0.5 << \textcolor{charliteral}{' '} <<j -\/ 0.5 << \textcolor{charliteral}{' '} <<k + 0.5 << std:: endl;}
+\DoxyCodeLine{204                      fout<< i + 0.5 << \textcolor{charliteral}{' '} <<j + 0.5 << \textcolor{charliteral}{' '} <<k + 0.5 << std:: endl;}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206                     \}}
+\DoxyCodeLine{207 \}}
+\DoxyCodeLine{208              \}}
+\DoxyCodeLine{209     \}}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i <\mbox{\hyperlink{class_sculptor_ad1e32f9042538419a3bc7b376f7813b8}{nx}}; i++)\{}
+\DoxyCodeLine{212                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<\mbox{\hyperlink{class_sculptor_a1ce2ff97ec94927928ab3f5ec4ba6761}{ny}}; j++)\{}
+\DoxyCodeLine{213                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<\mbox{\hyperlink{class_sculptor_a33204e7df26a7ee4c7192381a24335d3}{nz}}; k++)\{}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215                      \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].isOn)\{}
+\DoxyCodeLine{216                      fout<< 4 << \textcolor{charliteral}{' '} << 0+sum << \textcolor{charliteral}{' '} << 3+sum << \textcolor{charliteral}{' '} << 2+sum << \textcolor{charliteral}{' '} << 1+sum << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a06872ec79b836120b551a848968c0f1b}{r}} << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a27c0da1ed2ff430401d23ff171612a73}{g}} << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a5cd8432b1d7d0fd8b79e0fc7d10373a8}{b}} << \textcolor{charliteral}{' '}<< \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a3ce2579eb0a9f09a07112ce7498a638e}{a}} << std:: endl;}
+\DoxyCodeLine{217                      fout<< 4 << \textcolor{charliteral}{' '} << 4+sum << \textcolor{charliteral}{' '} << 5+sum << \textcolor{charliteral}{' '} << 6+sum << \textcolor{charliteral}{' '} << 7+sum << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a06872ec79b836120b551a848968c0f1b}{r}} << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a27c0da1ed2ff430401d23ff171612a73}{g}} << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a5cd8432b1d7d0fd8b79e0fc7d10373a8}{b}} << \textcolor{charliteral}{' '}<< \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a3ce2579eb0a9f09a07112ce7498a638e}{a}} << std:: endl;}
+\DoxyCodeLine{218                      fout<< 4 << \textcolor{charliteral}{' '} << 0+sum << \textcolor{charliteral}{' '} << 1+sum << \textcolor{charliteral}{' '} << 5+sum << \textcolor{charliteral}{' '} << 4+sum << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a06872ec79b836120b551a848968c0f1b}{r}} << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a27c0da1ed2ff430401d23ff171612a73}{g}} << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a5cd8432b1d7d0fd8b79e0fc7d10373a8}{b}} << \textcolor{charliteral}{' '}<< \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a3ce2579eb0a9f09a07112ce7498a638e}{a}} << std:: endl;}
+\DoxyCodeLine{219                      fout<< 4 << \textcolor{charliteral}{' '} << 0+sum << \textcolor{charliteral}{' '} << 4+sum << \textcolor{charliteral}{' '} << 7+sum << \textcolor{charliteral}{' '} << 3+sum << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a06872ec79b836120b551a848968c0f1b}{r}} << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a27c0da1ed2ff430401d23ff171612a73}{g}} << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a5cd8432b1d7d0fd8b79e0fc7d10373a8}{b}} << \textcolor{charliteral}{' '}<< \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a3ce2579eb0a9f09a07112ce7498a638e}{a}} << std:: endl;}
+\DoxyCodeLine{220                      fout<< 4 << \textcolor{charliteral}{' '} << 3+sum << \textcolor{charliteral}{' '} << 7+sum << \textcolor{charliteral}{' '} << 6+sum << \textcolor{charliteral}{' '} << 2+sum << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a06872ec79b836120b551a848968c0f1b}{r}} << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a27c0da1ed2ff430401d23ff171612a73}{g}} << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a5cd8432b1d7d0fd8b79e0fc7d10373a8}{b}} << \textcolor{charliteral}{' '}<< \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a3ce2579eb0a9f09a07112ce7498a638e}{a}} << std:: endl;}
+\DoxyCodeLine{221                      fout<< 4 << \textcolor{charliteral}{' '} << 1+sum << \textcolor{charliteral}{' '} << 2+sum << \textcolor{charliteral}{' '} << 6+sum << \textcolor{charliteral}{' '} << 5+sum << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a06872ec79b836120b551a848968c0f1b}{r}} << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a27c0da1ed2ff430401d23ff171612a73}{g}} << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a5cd8432b1d7d0fd8b79e0fc7d10373a8}{b}} << \textcolor{charliteral}{' '}<< \mbox{\hyperlink{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}{v}}[i][j][k].\mbox{\hyperlink{struct_voxel_a3ce2579eb0a9f09a07112ce7498a638e}{a}} << std:: endl;}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223                      sum += 8;}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225                      \}}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227 \}}
+\DoxyCodeLine{228              \}}
+\DoxyCodeLine{229     \}}
+\DoxyCodeLine{230     fout.close();}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Atributos}
+\mbox{\Hypertarget{class_sculptor_a6fd0157dcf17582f0edd5fddf157604e}\label{class_sculptor_a6fd0157dcf17582f0edd5fddf157604e}} 
+\index{Sculptor@{Sculptor}!a@{a}}
+\index{a@{a}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{a}{a}}
+{\footnotesize\ttfamily float Sculptor\+::a\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_sculptor_a7aafd7305ea634252d8288b60536cd96}\label{class_sculptor_a7aafd7305ea634252d8288b60536cd96}} 
+\index{Sculptor@{Sculptor}!b@{b}}
+\index{b@{b}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily float Sculptor\+::b\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_sculptor_a208c06af69a81a1568df4493868816f1}\label{class_sculptor_a208c06af69a81a1568df4493868816f1}} 
+\index{Sculptor@{Sculptor}!g@{g}}
+\index{g@{g}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{g}{g}}
+{\footnotesize\ttfamily float Sculptor\+::g\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_sculptor_ad1e32f9042538419a3bc7b376f7813b8}\label{class_sculptor_ad1e32f9042538419a3bc7b376f7813b8}} 
+\index{Sculptor@{Sculptor}!nx@{nx}}
+\index{nx@{nx}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{nx}{nx}}
+{\footnotesize\ttfamily int Sculptor\+::nx\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_sculptor_a1ce2ff97ec94927928ab3f5ec4ba6761}\label{class_sculptor_a1ce2ff97ec94927928ab3f5ec4ba6761}} 
+\index{Sculptor@{Sculptor}!ny@{ny}}
+\index{ny@{ny}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{ny}{ny}}
+{\footnotesize\ttfamily int Sculptor\+::ny\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_sculptor_a33204e7df26a7ee4c7192381a24335d3}\label{class_sculptor_a33204e7df26a7ee4c7192381a24335d3}} 
+\index{Sculptor@{Sculptor}!nz@{nz}}
+\index{nz@{nz}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{nz}{nz}}
+{\footnotesize\ttfamily int Sculptor\+::nz\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_sculptor_a3f5d2ec3b66d645019b8d81c810a1cd8}\label{class_sculptor_a3f5d2ec3b66d645019b8d81c810a1cd8}} 
+\index{Sculptor@{Sculptor}!r@{r}}
+\index{r@{r}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily float Sculptor\+::r\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}\label{class_sculptor_a4ca53a2f2fbf41ca42dfe729ebe693f1}} 
+\index{Sculptor@{Sculptor}!v@{v}}
+\index{v@{v}!Sculptor@{Sculptor}}
+\doxysubsubsection{\texorpdfstring{v}{v}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_voxel}{Voxel}}$\ast$$\ast$$\ast$ Sculptor\+::v\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+/home/rosa/\+Documentos/\+Projetos/projeto-\/programacao-\/avancada/sculptor/\mbox{\hyperlink{sculptor_8h}{sculptor.\+h}}\item 
+/home/rosa/\+Documentos/\+Projetos/projeto-\/programacao-\/avancada/sculptor/\mbox{\hyperlink{sculptor_8cpp}{sculptor.\+cpp}}\end{DoxyCompactItemize}
